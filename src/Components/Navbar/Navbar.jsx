@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../../Assets/logo.jpeg'
+import { useStateContext } from '../../Contexts/Context';
+
 
 function Navbar() {
+  const { account, connectAccounts } = useStateContext();
+  const [isConnecting, setIsConnecting] = useState(false);
+  const connectionHandler = async () => {
+    setIsConnecting(true);
+    await connectAccounts();
+    setIsConnecting(false);
+  };
   return (
     <nav className="bg-gray-900 shadow-lg ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,9 +75,22 @@ function Navbar() {
                     </svg>
                   </div>
                 </div>
+                {isConnecting ? (
                 <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
+                Connecting...
+              </button>
+                ) : account ? (
+                  <div className="text-white flex items-center gap-1 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
+                    <img src={`https://avatars.dicebear.com/api/bottts/${account}.svg`} className="h-[30px] w-[30px]" alt="Avatar" />
+                    <span className="navbar-account-address">{account.slice(0, 6)}...{account.slice(-4)}</span>
+                </div>
+                ) : (
+                <button onClick={connectionHandler} className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out hover:shadow-lg">
                   Connect Metamask
                 </button>
+                )
+              }
+
               </div>
             </div>
             <div className="-mr-2 flex items-center">
