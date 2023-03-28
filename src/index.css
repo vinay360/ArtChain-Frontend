@@ -6,3 +6,28 @@ body{
     background-color: rgb(13,17,23);
     color: #CCDAE7;
 }
+
+.skeletontext-head{
+    height: 25px;
+    width: 66%;
+    margin-bottom: 10px;
+}
+
+.skeletontext{
+    height: 20px;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.skeleton{
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+    0%{
+        background-color: rgba(39, 57, 76, 0.3);
+    }
+    100%{
+        background-color:  rgba(56, 64, 72, 0.7);
+    }
+}

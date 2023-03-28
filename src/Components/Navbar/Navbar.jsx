@@ -71,6 +71,8 @@ function Navbar() {
                 </button>
               </div>
             </div>
+            <div className="-mr-2 flex items-center">
+            </div>
           </div>
         </div>
       </div>
