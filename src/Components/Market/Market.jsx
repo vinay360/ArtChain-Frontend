@@ -41,10 +41,6 @@ const Market = () => {
         <SkeletonCard/>
         <SkeletonCard/>
         <SkeletonCard/>
-        <SkeletonCard/>
-        <SkeletonCard/>
-        <SkeletonCard/>
-        <SkeletonCard/>
         </div>
       </div>
     </>

@@ -15,7 +15,13 @@ body{
 
 .skeletontext{
     height: 20px;
-    width: 90%;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.skeletontext:last-child{
+    height: 20px;
+    width: 80%;
     margin-bottom: 10px;
 }
 
