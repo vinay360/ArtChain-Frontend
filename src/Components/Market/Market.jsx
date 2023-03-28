@@ -18,7 +18,7 @@ const Market = () => {
             </span>
           </h1>
         </div>
-        <div className="cards flex gap-9 w-screen h-full flex-wrap p-10">
+        <div className="cards flex gap-9 justify-center w-screen h-full flex-wrap p-10">
           <Card
             image={art1}
             name={'Demon Slayer Vector Art'}
